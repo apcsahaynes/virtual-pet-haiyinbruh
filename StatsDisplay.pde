@@ -10,7 +10,7 @@ void drawStats(VirtualPet pet) {
   fill(255, 255, 255, 180);
   stroke(180, 160, 220);
   strokeWeight(2);
-  rect(STATS_X, STATS_Y, STATS_W, 200, 12);
+  rect(STATS_X, STATS_Y, STATS_W, 250, 12);
 
   // Panel title
   fill(90, 60, 130);
@@ -25,6 +25,10 @@ void drawStats(VirtualPet pet) {
   int row = 0;
   statRow("Energy",    pet.getEnergyLevel(),    row++);
   statRow("Happiness", pet.getHappinessLevel(), row++);
+  statRow("Weight", pet.getWeightLevel(), row++);
+  statRow("Hygiene",pet.getCleanLevel(), row++);
+  statRow("Age", pet.getAgeYears(), row++);
+  statRow("Months", pet.getAgeMonths(), row++);
   // statRow("Weight",    pet.getWeight(),         row++);  // uncomment when getter added
   // statRow("Age",       pet.getAgeYears(),        row++);  // uncomment when getter added
 }
