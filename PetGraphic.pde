@@ -43,7 +43,7 @@ void drawPetArea() {
   rect(20, 20, 380, 390, 16);
 
   // Draw whichever graphic option you're using
-  drawPetGraphic();
+  drawPetGraphic(myPet);
 }
 
 
@@ -52,7 +52,7 @@ void drawPetArea() {
 // Replace or add to the placeholder below!
 // =============================================
 
-void drawPetGraphic() {
+void drawPetGraphic(VirtualPet pet) {
 
   // ---- Placeholder shape ----
   // Replace this with your own drawing,
@@ -60,43 +60,50 @@ void drawPetGraphic() {
 
   // Body
   fill(170, 210, 255);
-  noStroke();
-  ellipse(210, 220, 140, 120);
-
-  // Head
-  fill(170, 210, 255);
-  ellipse(210, 145, 100, 90);
+  ellipse(210, 220, 140+pet.getWeightLevel(), 120+pet.getWeightLevel());
 
   // Eyes
+  noStroke();
   fill(50);
-  ellipse(190, 138, 14, 14);
-  ellipse(230, 138, 14, 14);
+  ellipse(190, 138+60, 14, 14);
+  ellipse(230, 138+60, 14, 14);
 
   // Eye shine
   fill(255);
-  ellipse(195, 134, 5, 5);
-  ellipse(235, 134, 5, 5);
+  ellipse(195, 134+60, 5, 5);
+  ellipse(235, 134+60, 5, 5);
 
   // Nose
   fill(255, 160, 180);
-  ellipse(210, 152, 10, 7);
+  ellipse(210, 152+65, 10+5, 7+5);
 
   // Mouth
   noFill();
   stroke(80);
-  strokeWeight(2);
-  arc(210, 160, 24, 14, 0, PI);
+  strokeWeight(3);
+  arc(210-13, 160+63, 24, 14, 0, PI);
+  
+  noFill();
+  stroke(80);
+  strokeWeight(3);
+  arc(210+13, 160+63, 24, 14, 0, PI);
 
   // Ears
-  fill(170, 210, 255);
+  fill(170, 195, 255);
   noStroke();
-  triangle(178, 108, 168, 75, 195, 100);
-  triangle(242, 108, 252, 75, 225, 100);
+  triangle(178-15, 108+70, 168-10, 75+65, 195-10, 100+65);
+  triangle(242+15, 108+70, 252+10, 75+65, 225+10, 100+65);
+  
+  //Legs
+  ellipse(170,275,15,25);
+  ellipse(170+75,275,15,25);
 
+/*
   // Inner ears
   fill(255, 180, 200);
   triangle(180, 105, 172, 82, 193, 100);
   triangle(240, 105, 248, 82, 227, 100);
+*/
 
   // ---- END placeholder ----
 
